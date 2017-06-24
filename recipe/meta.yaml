@@ -1,21 +1,21 @@
-{%set name = "Flask-Security" %}
-{%set version = "3.0.0" %}
-{%set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "d61daa5f5a48f89f30f50555872bdf581b2c65804668b0313345cd7beff26432" %}
-{%set build_num = "0" %}
+{% set name = "Flask-Security" %}
+{% set version = "3.0.0" %}
+{% set bundle = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash_val = "d61daa5f5a48f89f30f50555872bdf581b2c65804668b0313345cd7beff26432" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
+  fn: {{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  number: {{ build_num }}
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 
@@ -26,14 +26,13 @@ requirements:
 
   run:
     - python
-    - flask >=0.9
-    - flask-login >=0.3.0,<0.4
+    - flask >=0.11
+    - flask-login >=0.3.0
     - flask-mail >=0.7.3
     - flask-principal >=0.3.3
-    - flask-script
-    - flask-wtf >=0.8
-    - itsdangerous >=0.17
-    - passlib >=1.6.1
+    - flask-wtf >=0.13.1
+    - itsdangerous >=0.21
+    - passlib >=1.7
 
 test:
   imports:
@@ -54,8 +53,8 @@ test:
 
 about:
   home: https://github.com/mattupstate/flask-security
+  license_file: LICENSE
   license: MIT
-  # license_file: No reference to LICENSE in MANIFEST.in - see https://github.com/mattupstate/flask-security/pull/544
   license_family: MIT
   summary: 'Simple security for Flask apps'
   dev_url: https://github.com/mattupstate/flask-security
