@@ -49,7 +49,7 @@ test:
     - flask_security.passwordless
     - flask_security.recoverable
     - flask_security.registerable
-    - flask_security.script
+    # - flask_security.script  -- deliberately used to throw a deprecation warning
     - flask_security.signals
     - flask_security.utils
     - flask_security.views
