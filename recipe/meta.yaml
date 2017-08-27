@@ -1,9 +1,9 @@
 {% set name = "Flask-Security" %}
-{% set version = "1.7.5" %}
+{% set version = "3.0.0" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "988952dba451896fd7e9dbf838d0e843844f1cbd27a8e15594a9e1d9432f435f" %}
-{% set build = 1 %}
+{% set hash = "d61daa5f5a48f89f30f50555872bdf581b2c65804668b0313345cd7beff26432" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
