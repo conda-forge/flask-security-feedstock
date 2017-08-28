@@ -36,6 +36,7 @@ requirements:
     - flask-babelex >=0.9.3
     - itsdangerous >=0.21
     - passlib >=1.7
+    - flask-script
 
 test:
   imports:
