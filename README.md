@@ -14,9 +14,7 @@ Summary: Simple security for Flask apps
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/flask-security-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/flask-security-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/flask-security-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/flask-security-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/flask-security-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/flask-security-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/flask-security-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/flask-security-feedstock)
 
 Current release info
 ====================
