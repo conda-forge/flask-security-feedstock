@@ -41,6 +41,9 @@ requirements:
     - flask-script
 
 test:
+  requires:
+    - pip
+    - pytest-runner >=2.6.2
   imports:
     - flask_security
     - flask_security.changeable
@@ -56,6 +59,8 @@ test:
     - flask_security.signals
     - flask_security.utils
     - flask_security.views
+  commands:
+    - pip check
 
 about:
   home: https://github.com/mattupstate/flask-security
