@@ -21,7 +21,6 @@ requirements:
     - flit-core >=3.8,<4
     - pip
     - python {{ python_min }}
-    - setuptools  # due to importing pkg_resources
 
   run:
     - python >={{ python_min }}
@@ -38,6 +37,7 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
+    - setuptools  # due to 'passlib.pwd' importing pkg_resources.
   imports:
     - flask_security
 
