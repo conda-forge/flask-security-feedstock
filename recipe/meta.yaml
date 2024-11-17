@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
   sha256: 0139eef4b5a3f44387a96c85cc880b84449156f70882451f781a4dea7ad3ec8a
 
 build:
@@ -18,16 +18,16 @@ build:
 
 requirements:
   host:
-    - flit_core >=3.8,<4
+    - flit-core >=3.8,<4
     - pip
     - python {{ python_min }}
 
   run:
     - python >={{ python_min }}
-    - Flask >=3.0.0
-    - Flask-Login >=0.6.3
-    - Flask-Principal >=0.4.0
-    - Flask-WTF >=1.1.2
+    - flask >=3.0.0
+    - flask-login >=0.6.3
+    - flask-principal >=0.4.0
+    - flask-wtf >=1.1.2
     - email-validator >=2.0.0
     - markupsafe >=2.1.0
     - passlib >=1.7.4
