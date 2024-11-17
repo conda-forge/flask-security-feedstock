@@ -33,6 +33,7 @@ requirements:
     - passlib >=1.7.4
     - wtforms >=3.0.0
     - importlib_resources >=5.10.0
+    - pkg_resources
 
 test:
   requires:
