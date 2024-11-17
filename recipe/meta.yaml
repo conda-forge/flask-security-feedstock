@@ -21,6 +21,7 @@ requirements:
     - flit-core >=3.8,<4
     - pip
     - python {{ python_min }}
+    - setuptools  # due to importing pkg_resources
 
   run:
     - python >={{ python_min }}
@@ -32,8 +33,7 @@ requirements:
     - markupsafe >=2.1.0
     - passlib >=1.7.4
     - wtforms >=3.0.0
-    - importlib_resources >=5.10.0
-    - pkg_resources
+    - importlib_resources >=5.10.0    
 
 test:
   requires:
