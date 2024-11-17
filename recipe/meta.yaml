@@ -1,8 +1,7 @@
 {% set name = "Flask-Security" %}
-{% set version = "3.0.0" %}
+{% set version = "5.5.2" %}
 {% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "d61daa5f5a48f89f30f50555872bdf581b2c65804668b0313345cd7beff26432" %}
+{% set hash = "0139eef4b5a3f44387a96c85cc880b84449156f70882451f781a4dea7ad3ec8a" %}
 {% set build = 0 %}
 
 package:
@@ -11,8 +10,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.{{ bundle }}
+  sha256: {{ hash }}
 
 build:
   noarch: python
@@ -21,7 +20,7 @@ build:
 
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
     - babel >=1.3
@@ -59,6 +58,7 @@ test:
 about:
   home: https://github.com/mattupstate/flask-security
   license: MIT
+  license_file: LICENSE.txt
   # license_file: No reference to LICENSE in MANIFEST.in - see https://github.com/mattupstate/flask-security/pull/544
   license_family: MIT
   summary: 'Simple security for Flask apps'
