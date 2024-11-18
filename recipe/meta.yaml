@@ -1,75 +1,54 @@
+{% set python_min = "3.9" %}
 {% set name = "Flask-Security" %}
-{% set version = "3.0.0" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "d61daa5f5a48f89f30f50555872bdf581b2c65804668b0313345cd7beff26432" %}
+{% set version = "5.5.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
+  sha256: 0139eef4b5a3f44387a96c85cc880b84449156f70882451f781a4dea7ad3ec8a
 
 build:
-  number: 1
+  noarch: python
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
-
 requirements:
-  build:
-    - python
-    - setuptools
-    - babel >=1.3
-    - pytest-runner >=2.6.2
-  
   host:
-    - python
+    - flit-core >=3.8,<4
     - pip
+    - python {{ python_min }}
 
   run:
-    - python
-    - flask >=0.11
-    - flask-login >=0.3.0
-    - flask-mail >=0.7.3
-    - flask-principal >=0.3.3
-    - flask-wtf >=0.13.1
-    - flask-babelex >=0.9.3
-    - itsdangerous >=0.21
-    - passlib >=1.7
-    - flask-script
+    - python >={{ python_min }}
+    - flask >=3.0.0
+    - flask-login >=0.6.3
+    - flask-principal >=0.4.0
+    - flask-wtf >=1.1.2
+    - email-validator >=2.0.0
+    - markupsafe >=2.1.0
+    - passlib >=1.7.4
+    - wtforms >=3.0.0
+    - importlib_resources >=5.10.0    
 
 test:
   requires:
-    - pip
-    - pytest-runner >=2.6.2
+    - python {{ python_min }}
+    - setuptools  # due to 'passlib.pwd' importing pkg_resources.
   imports:
     - flask_security
-    - flask_security.changeable
-    - flask_security.confirmable
-    - flask_security.core
-    - flask_security.datastore
-    - flask_security.decorators
-    - flask_security.forms
-    - flask_security.passwordless
-    - flask_security.recoverable
-    - flask_security.registerable
-    - flask_security.script
-    - flask_security.signals
-    - flask_security.utils
-    - flask_security.views
-  commands:
-    - pip check
 
 about:
-  home: https://github.com/mattupstate/flask-security
+  home: https://github.com/pallets-eco/flask-security
   license: MIT
-  license_file: LICENSE
+  license_file: LICENSE.txt
   license_family: MIT
-  summary: 'Simple security for Flask apps'
-  dev_url: https://github.com/mattupstate/flask-security
-  doc_url: https://pythonhosted.org/Flask-Security/
+  summary: 'Quickly add security features to your Flask application'
+  dev_url: https://github.com/pallets-eco/flask-security
+  doc_url: https://flask-security.readthedocs.io
 
 extra:
   recipe-maintainers:
