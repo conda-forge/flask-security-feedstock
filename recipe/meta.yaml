@@ -1,6 +1,6 @@
 {% set python_min = "3.9" %}
 {% set name = "Flask-Security" %}
-{% set version = "5.5.2" %}
+{% set version = "5.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
-  sha256: 0139eef4b5a3f44387a96c85cc880b84449156f70882451f781a4dea7ad3ec8a
+  sha256: bb40b40a100a1c9bee79bbcf52a6faef8e8bc1bbae68a17563248173cf5d27aa
 
 build:
   noarch: python
@@ -32,7 +32,7 @@ requirements:
     - markupsafe >=2.1.0
     - passlib >=1.7.4
     - wtforms >=3.0.0
-    - importlib_resources >=5.10.0    
+    - importlib_resources >=5.10.0
 
 test:
   requires:
