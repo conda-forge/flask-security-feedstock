@@ -1,4 +1,4 @@
-{% set python_min = "3.9" %}
+{% set python_min = "3.10" %}
 {% set name = "Flask-Security" %}
 {% set version = "5.7.0" %}
 
@@ -24,13 +24,13 @@ requirements:
 
   run:
     - python >={{ python_min }}
-    - flask >=3.0.0
+    - flask >=3.1.0
     - flask-login >=0.6.3
     - flask-principal >=0.4.0
     - flask-wtf >=1.1.2
     - email-validator >=2.0.0
     - markupsafe >=2.1.0
-    - passlib >=1.7.4
+    - passlib >=1.9.3
     - wtforms >=3.0.0
     - importlib_resources >=5.10.0
 
