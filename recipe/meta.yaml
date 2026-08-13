@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "Flask-Security" %}
-{% set version = "5.8.1" %}
+{% set version = "5.8.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,8 +8,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
-  sha256: cba0f38c27fff3f1aa2767279d98913145513a7b2ad140686cdd6ae34d55b67b
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_').lower() }}-{{ version }}.tar.gz
+  sha256: 827199c0a7b8a887cca7c96611d586fa61f4b1957fc2f1fb040746549ef3d918
 
 build:
   noarch: python
