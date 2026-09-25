@@ -1,4 +1,4 @@
-{% set python_min = "3.10" %}
+{% set python_min = "3.11" %}
 {% set name = "Flask-Security" %}
 {% set version = "5.9.0" %}
 
@@ -24,20 +24,18 @@ requirements:
 
   run:
     - python >={{ python_min }}
-    - flask >=3.1.0
+    - flask >=3.1.1
     - flask-login >=0.6.3
     - flask-principal >=0.4.0
     - flask-wtf >=1.1.2
-    - email-validator >=2.0.0
+    - email-validator >=2.3.0
     - markupsafe >=2.1.0
     - libpass >=1.9.3
-    - wtforms >=3.0.0
-    - importlib_resources >=5.10.0
+    - wtforms >=3.2.1
 
 test:
   requires:
     - python {{ python_min }}
-    - setuptools  # due to 'passlib.pwd' importing pkg_resources.
   imports:
     - flask_security
 
